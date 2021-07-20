@@ -10,6 +10,14 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableMongoRepositories("org.user_application.repository.mongo")
 public class User_applicationApplication {
 
+
+
+
+
+
+
+
+
     public static void main(String[] args) {
         SpringApplication.run(User_applicationApplication.class, args);
     }
