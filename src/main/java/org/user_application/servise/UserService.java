@@ -1,30 +1,34 @@
 package org.user_application.servise;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 import org.user_application.model.User;
-import org.user_application.repository.mysql.UserRepository;
 
 @Service
 public class UserService {
-    @Autowired
-    private UserRepository userRepository;
+    private CrudRepository<User, Long> repository;
+
+    public UserService(CrudRepository<User, Long> repository) {
+        this.repository = repository;
+    }
 
     public User save(User user) {
-        return userRepository.save(user);
+        return repository.save(user);
     }
 
     public void delete(User user) {
-        userRepository.delete(user);
+        repository.delete(user);
     }
 
     public User update(User user) {
-        return userRepository.save(user);
+        return repository.save(user);
     }
 
     public User get(Long id) {
-        if (userRepository.findById(id).isEmpty()) {
+        if (repository.findById(id).isEmpty()) {
             throw new RuntimeException("User with id " + id + " not exists");
         }
-        return userRepository.findById(id).get();
+        return repository.findById(id).get();
     }
+
+
 }

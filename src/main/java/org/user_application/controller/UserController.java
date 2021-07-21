@@ -8,7 +8,7 @@ import org.user_application.servise.UserService;
 
 @RestController
 @RequestMapping(
-        value = "/users/1",
+        value = "/users",
         produces = "application/json",
         method = RequestMethod.POST)
 public class UserController {
