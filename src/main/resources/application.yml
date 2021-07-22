@@ -1,2 +1,25 @@
 database:
-  UseMongoDb : true
+  UseMongoDb : false
+
+spring:
+  data:
+    mongodb:
+      database: mongodb
+      port: 27017
+      host: localhost
+      auto-index-creation: true
+
+  datasource:
+    username: root
+    password: 1234
+    url: jdbc:mysql://localhost:3306/testDB
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  main:
+    allow-bean-definition-overriding: true
+
+  jpa:
+    hibernate.ddl-auto: validate
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+

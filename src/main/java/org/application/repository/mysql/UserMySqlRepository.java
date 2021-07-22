@@ -1,9 +1,9 @@
-package org.user_application.repository.mysql;
+package org.application.repository.mysql;
 
+import org.application.model.User;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import org.user_application.model.User;
 
 @Repository
 @ConditionalOnProperty(prefix = "database", name = "UseMongoDb", matchIfMissing = true, havingValue = "false")

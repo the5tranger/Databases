@@ -1,7 +1,7 @@
-package org.user_application.servise;
+package org.application.servise;
+import org.application.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
-import org.user_application.model.User;
 
 @Service
 public class UserService {

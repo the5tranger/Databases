@@ -1,4 +1,4 @@
-package org.user_application.model;
+package org.application.model;
 
 import lombok.Data;
 import lombok.ToString;
