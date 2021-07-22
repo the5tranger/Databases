@@ -24,10 +24,7 @@ public class UserService {
     }
 
     public User get(Long id) {
-        if (repository.findById(id).isEmpty()) {
-            throw new RuntimeException("User with id " + id + " not exists");
-        }
-        return repository.findById(id).get();
+        return repository.findById(id).orElseThrow(()-> new RuntimeException("User with id " + id + " not exists"));
     }
 
 
